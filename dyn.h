@@ -11,6 +11,12 @@ typedef struct {
     size_t capacity;
 } dyn_int;
 
+typedef struct {
+    char **array;
+    size_t size;
+    size_t capacity;
+} dyn_string;
+
 void dyn_int_init(dyn_int *array) {
     array->array = malloc(sizeof(int));
     array->size = 0;
@@ -95,13 +101,6 @@ int dyn_int_size(dyn_int *array) {
 int dyn_int_capacity(dyn_int *array) {
     return array->capacity;
 }
-
-
-typedef struct {
-    char **array;
-    size_t size;
-    size_t capacity;
-} dyn_string;
 
 void dyn_string_init(dyn_string *array) {
     array->array = malloc(sizeof(char *));
